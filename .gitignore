@@ -92,3 +92,6 @@ environment/
 
 # Ignore Reference repository
 speech_recognition
+
+# Ignore html generated from RST
+*.html
