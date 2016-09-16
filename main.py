@@ -1,5 +1,10 @@
+# Resize the Window - Non Pep8 Compliant, mandated by Kivy
+from kivy.config import Config
+Config.set('graphics', 'width', '400')
+Config.set('graphics', 'height', '550')
+
 from kivy.app import App
-from kivy.uix.widget import Widget
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 
 import speech_recognition as sr
@@ -10,7 +15,7 @@ m = sr.Microphone()
 
 
 # Root Widget
-class Root(Widget):
+class Root(BoxLayout):
     pass
 
 

@@ -1,10 +1,11 @@
 #:kivy 1.0.9
 
 <Root>:
-    BoxLayout:
-        width: root.width
-        height: root.height
-        orientation: 'vertical'
-        Listen:
-            text: 'Text'
-            on_release: self.record()
+    orientation: 'vertical'
+    Listen:
+        text: 'Record Speech'
+        on_release: self.record()
+        height: '50dp'
+        size_hint_y: None
+    TextInput:
+            
