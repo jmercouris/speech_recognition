@@ -2,6 +2,10 @@ Python Speech Recognition GUI Demo
 ================================================================================
 This program is a brief demonstration of the usage of Python in conjunction with a GUI Framework (Kivy) to create an application that allows the user to input text and recognize it using the Google Speech API.
 
+Screenshot
+--------------------------------------------------------------------------------
+.. image:: static/img/window_sample_text.png
+
 Quickstart
 --------------------------------------------------------------------------------
 The main entry into the program is 'main.py' simply execute `python main.py` with the appropriate dependencies installed. Upon execution of the program, the first thing it will do is calibrate the microphone's ambient volume. It is important to stay quiet during this time so that the microphone may establish an accurate baseline.
