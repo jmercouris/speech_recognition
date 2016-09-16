@@ -10,7 +10,6 @@ from kivy.properties import StringProperty
 
 import speech_recognition as sr
 
-
 r = sr.Recognizer()
 m = sr.Microphone()
 
@@ -20,10 +19,12 @@ class Root(BoxLayout):
     pass
 
 
-class Listen(Button):
+class RecordButton(Button):
+    # String Property to Hold output for publishing by Textinput
     output = StringProperty('')
     
     def record(self):
+        # GUI Blocking Audio Capture
         with m as source:
             audio = r.listen(source)
         

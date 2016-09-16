@@ -2,13 +2,12 @@
 
 <Root>:
     orientation: 'vertical'
-    Listen:
-        id: listen
+    RecordButton:
+        id: record_button
         text: 'Record Speech'
         on_release: self.record()
         height: '50dp'
         size_hint_y: None
 
     TextInput:
-        text: listen.output
-        
+        text: record_button.output
