@@ -1,3 +1,6 @@
+# Zhang, A. (2016). Speech Recognition (Version 3.4) [Software]. Available from https://github.com/Uberi/speech_recognition#readme.
+# licensing information for SpeechRecognition can be found within the SpeechRecognition README
+
 import speech_recognition as sr
 
 r = sr.Recognizer()
