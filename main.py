@@ -1,7 +1,7 @@
 # Resize the Window - Non Pep8 Compliant, mandated by Kivy
 from kivy.config import Config
 Config.set('graphics', 'width', '400')
-Config.set('graphics', 'height', '550')
+Config.set('graphics', 'height', '200')
 
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
@@ -24,21 +24,19 @@ class Listen(Button):
     output = StringProperty('')
     
     def record(self):
-        self.output = ("Recording, Say something!")
         with m as source:
             audio = r.listen(source)
-        self.output = ("Got it! Now to recognize it...")
         
         try:
             # recognize speech using Google Speech Recognition
             value = r.recognize_google(audio)
-            print("You said {}".format(value))
+            self.output = "You said \"{}\"".format(value)
         
         except sr.UnknownValueError:
-            print("Oops! Didn't catch that")
+            self.output = ("Oops! Didn't catch that")
         
         except sr.RequestError as e:
-            print("Uh oh! Couldn't request results from Google Speech Recognition service; {0}".format(e))
+            self.output = ("Uh oh! Couldn't request results from Google Speech Recognition service; {0}".format(e))
 
 
 class SpeechApp(App):
