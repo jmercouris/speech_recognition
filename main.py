@@ -6,6 +6,7 @@ Config.set('graphics', 'height', '550')
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
+from kivy.properties import StringProperty
 
 import speech_recognition as sr
 
@@ -20,12 +21,13 @@ class Root(BoxLayout):
 
 
 class Listen(Button):
+    output = StringProperty('')
+    
     def record(self):
-        print("Recording")
-        print("Say something!")
+        self.output = ("Recording, Say something!")
         with m as source:
             audio = r.listen(source)
-        print("Got it! Now to recognize it...")
+        self.output = ("Got it! Now to recognize it...")
         
         try:
             # recognize speech using Google Speech Recognition
@@ -40,15 +42,17 @@ class Listen(Button):
 
 
 class SpeechApp(App):
-    
     def build(self):
+        # Calibrate the Microphone to Silent Levels
         print("A moment of silence, please...")
         with m as source:
             r.adjust_for_ambient_noise(source)
             print("Set minimum energy threshold to {}".format(r.energy_threshold))
+        # Create a root widget object and return as root
         return Root()
 
 
+# When Executed from the command line (not imported as module), create a new SpeechApp
 if __name__ == '__main__':
     SpeechApp().run()
 
