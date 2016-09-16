@@ -1,6 +1,9 @@
 from kivy.app import App
 from kivy.uix.widget import Widget
+from kivy.uix.button import Button
+
 import speech_recognition as sr
+
 
 r = sr.Recognizer()
 m = sr.Microphone()
@@ -9,6 +12,11 @@ m = sr.Microphone()
 # Root Widget
 class Root(Widget):
     pass
+
+
+class Listen(Button):
+    def record(self):
+        print("Recording")
 
 
 class SpeechApp(App):
@@ -23,10 +31,6 @@ class SpeechApp(App):
 
 if __name__ == '__main__':
     SpeechApp().run()
-
-
-    import speech_recognition as sr
-
 
 # try:
     
