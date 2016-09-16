@@ -89,3 +89,6 @@ environment/
 
 # Rope project settings
 .ropeproject
+
+# Ignore Reference repository
+speech_recognition
